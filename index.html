@@ -1,43 +1,49 @@
+/* ... CSS sebelumnya ... */
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Clone - Tonton acara TV online</title>
-    <link rel="stylesheet" href="styles.css"> 
-</head>
-<body>
-    <div class="hero-bg">
-        <header class="header">
-            <img src="logo-netflix.png" alt="Logo Netflix" class="logo">
-            <div class="header-nav">
-                <select class="language-select">
-                    <option value="id">Bahasa Indonesia</option>
-                    <option value="en">English</option>
-                </select>
-                <a href="#" class="btn btn-primary">Masuk</a>
-            </div>
-        </header>
+/* Untuk tampilan logo yang lebih mencolok */
+.logo {
+    /* ... styling sebelumnya ... */
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    /* Efek teks mencolok */
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8); /* Ganti warna sesuai aksen Anda */
+}
 
-        <div class="hero-content">
-            <h1>Film, acara TV, dan lainnya tanpa batas.</h1>
-            <h3>Tonton di mana pun. Batalkan kapan pun.</h3>
-            <p>Siap menonton? Masukkan email Anda untuk membuat atau memulai lagi keanggotaan Anda.</p>
-            
-            <form class="email-form">
-                <input type="email" placeholder="Alamat email" required>
-                <button type="submit" class="btn btn-red">
-                    Mulai
-                </button>
-            </form>
-        </div>
-    </div>
-    
-    <section class="feature-section">
-        </section>
+/* Indikator glow di bawah hero */
+.glow-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 5px;
+    background-color: #e50914; /* Warna aksen */
+    box-shadow: 0 0 20px 5px #e50914; /* Efek neon/glow */
+    z-index: 5;
+    border-radius: 5px;
+}
 
-    <footer class="footer">
-        </footer>
-</body>
-</html>
+/* Card Fitur Sederhana */
+.feature-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #222; /* Garis pemisah tipis */
+}
+
+.feature-card {
+    background-color: #111;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    border-left: 3px solid #e50914; /* Garis aksen mencolok */
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4); /* Efek melayang */
+}
