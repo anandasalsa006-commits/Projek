@@ -1,0 +1,194 @@
+/* ---------------------------------- */
+/* 1. RESET DAN FONT DASAR */
+/* ---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Memudahkan tata letak */
+}
+
+body {
+    background-color: #000; /* Latar belakang hitam khas Netflix */
+    color: #fff; /* Teks putih */
+    font-family: Arial, Helvetica, sans-serif; /* Font sederhana */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ---------------------------------- */
+/* 2. BAGIAN HEADER DAN LOGO */
+/* ---------------------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%; /* Padding di kiri dan kanan */
+    position: relative; /* Agar z-index bekerja di atas overlay */
+    z-index: 10;
+}
+
+.logo {
+    /* Ganti dengan URL atau path ke logo Netflix Anda */
+    /* Jika Anda menggunakan teks atau font yang mirip: */
+    width: 150px; 
+    height: auto;
+    /* Jika menggunakan gambar placeholder: */
+    background-color: #e50914; 
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    /* Hilangkan background-color jika menggunakan img sungguhan */
+}
+
+.header-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.language-select {
+    background: transparent;
+    border: 1px solid #aaa;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mengatur warna teks di dalam option agar terlihat */
+.language-select option {
+    background-color: #000; 
+    color: #fff;
+}
+
+/* ---------------------------------- */
+/* 3. BUTTONS (Tombol Masuk dan Mulai) */
+/* ---------------------------------- */
+.btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Tombol "Masuk" */
+.btn-primary {
+    background-color: #e50914; /* Merah khas Netflix */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #f40612; /* Sedikit lebih terang saat di-hover */
+}
+
+/* Tombol "Mulai" */
+.btn-red {
+    background-color: #e50914;
+    color: #fff;
+    font-size: 26px; /* Lebih besar dari tombol lainnya */
+    padding: 15px 30px;
+    border-radius: 2px;
+}
+
+.btn-red:hover {
+    background-color: #f40612;
+}
+
+/* ---------------------------------- */
+/* 4. BAGIAN HERO (BANNER UTAMA) */
+/* ---------------------------------- */
+.hero-bg {
+    /* Ganti dengan URL gambar latar belakang Anda */
+    background: url('bg-image.jpg') no-repeat center center/cover;
+    height: 100vh; /* Mengambil seluruh tinggi viewport */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Memulai dari atas (untuk header) */
+}
+
+/* Overlay gelap khas Netflix */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Transparansi hitam */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto;
+    padding-top: 150px; /* Jarak dari atas */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------- */
+/* 5. FORM EMAIL */
+/* ---------------------------------- */
+.email-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.email-form input[type="email"] {
+    padding: 15px 10px;
+    font-size: 16px;
+    width: 450px;
+    border: 1px solid #8c8c8c;
+    border-radius: 2px;
+    color: #000;
+}
+
+/* ---------------------------------- */
+/* 6. MEDIA QUERIES (Responsif Dasar) */
+/* ---------------------------------- */
+@media (max-width: 950px) {
+    .email-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .email-form input[type="email"] {
+        width: 80%; /* Input mengambil lebar lebih besar */
+        margin-bottom: 15px;
+    }
+    
+    .btn-red {
+        font-size: 20px;
+        padding: 12px 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
